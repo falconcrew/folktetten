@@ -1,0 +1,11 @@
+<div class="perf">
+	<br><br/><br>
+	<h1>Kommande framträdanden</h1>
+	<% @performances.each do |perf| %>
+		<hr class="perf"><br>
+		<h2><%= perf.name %></h2>
+		<h3><%= perf.location %>, <%= perf.date %>, <%= perf.time %></h3>
+		<p><%= perf.description %></p>
+	<% end %>
+</div>
+

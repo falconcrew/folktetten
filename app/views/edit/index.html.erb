@@ -1,0 +1,40 @@
+<div>
+	<br><br/><br>
+	<h1>
+		<% @infos.each do |info| %>
+		<%= link_to "Hantera Extern Info", edit_info_path(info) %>
+		<% end %>
+	</h1>
+	
+	<h1>Hantera Spelningar</h1>
+	<div class="framed">
+		<table>
+			<tbody>
+				<% @performances.each do |perf| %>
+					<tr>
+						<td><%= perf.name %></td>
+						<td><%= button_to "Ändra", edit_performance_path(perf), method: :get %></td>
+						<td><%= button_to "Ta bort", perf, method: :delete %></td>
+					</tr>
+				<% end %>
+				<tr><td><%= button_to "Lägg till spelning", new_performance_path, method: :get %></td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<h1>Hantera Noter</h1>
+	<div class="framed">
+		<table>
+			<tbody>
+				<% @scores.each do |score| %>
+					<tr>
+						<td><%= score.name %></td>
+						<td><%= button_to "Ta bort", score, method: :delete %></td>
+					</tr>
+				<% end %>
+				<tr><td><%= button_to "Ladda upp noter", new_score_path, method: :get %></td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+</div>

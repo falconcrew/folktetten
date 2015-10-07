@@ -1,0 +1,7 @@
+
+	<div class="scores">
+		<br><br/><br>
+		<% @scores.each do |score| %>
+			<li><p class="scores"><%= link_to score.name, score.attachment_url %></p></li>
+		<% end %>
+	</div>

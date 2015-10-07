@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>Folktetten</title>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+  
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<%= favicon_link_tag "gklav.png" %>
+	<script>
+		function hide(){
+			$('div.wrapp_info').hide();
+			$('div.wrapp_start').show();		
+			$('div.wrapp_contact').hide();		
+			$('div.wrapp_media').hide();		
+			$('div.wrapp_login').hide();
+			$('div.wrapp_inhouse').hide();
+		}
+	</script>
+</head>
+<body>
+	<body onLoad="hide()">
+		<li class='start_page'><%= link_to image_tag("logga2.png"), "/" %></li>
+
+		<HR>			
+		<div class="nav">
+			<div class="container">
+				<ul class="pull-left">
+					<li class='info'><p id = "info", class = "tabs"><%= link_to "Info", "/info" %></p></li>
+					<li class='contact'><p id ="contact", class = "tabs"><%= link_to "Kontakt", "/kontakt" %></p></li>
+					<li class='media'><p id="media", class = "tabs">Media</p></li>
+					<li class='performances'><p id='performances', class="tabs"><%= link_to "Framträdanden", performances_path %></p></li>
+					<% if current_user %>
+						<li class='inhouse'><p id="inhouse", class = "tabs">Internt</p></li>
+						<li class='scores'><p id="scores", class = "tabs"><%= link_to "Noter", scores_path %></p></li>
+					<% end %>
+					<% if current_user && current_user.editor? %>
+						<li class="edit"><p id="edit", class = "tabs"><%= link_to "Hantera", "/edit" %></p></li>
+					<% end %>
+				</ul>
+				<ul class="pull-right">
+					<% if current_user %>
+					<li><p class="tabs"><%= current_user.username %></p></li>
+					<li class="logout"><p class="tabs"><%= link_to "Logga ut", logout_path, method: "delete" %></p></li>
+					<% else %>
+					<li class='login'><p id = "login", class = "tabs"><%= link_to "Logga in", login_path %></p></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+
+<%= yield %>
+
+</body>
+</html>

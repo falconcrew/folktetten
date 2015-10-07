@@ -1,0 +1,12 @@
+<div>
+	<br><br/><br>
+	<%= form_for @info do |f| %>
+		<h3>Startsida</h3>
+		<%= f.text_area :start %><br>
+		<h3>Infosida</h3>
+		<%= f.text_area :info %><br>
+		<h3>Kontaktsida</h3>
+		<%= f.text_area :contact %><br>
+		<%= f.submit "Updatera" %>
+	<% end %>
+</div>
