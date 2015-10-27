@@ -6,6 +6,7 @@ class CreatePerformances < ActiveRecord::Migration
       t.string :date
       t.string :time
       t.text :description
+      t.string :scores, array: true
 
       t.timestamps
     end

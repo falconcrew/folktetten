@@ -118,7 +118,6 @@ li p.scores a {
 	font-size: 14px;
 	text-decoration: none;
 	text-transform: none;
-	al
 }
 
 div.framed {
@@ -139,4 +138,10 @@ hr.perf {
 
 div.perf {
 	width: 50%;
+}
+
+div.perf a {
+	text-decoration: none;
+	text-transform: none;
+	color: white;
 }

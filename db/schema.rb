@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150930075615) do
     t.string   "date"
     t.string   "time"
     t.text     "description"
+    t.string   "scores"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
