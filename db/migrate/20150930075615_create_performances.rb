@@ -3,7 +3,9 @@ class CreatePerformances < ActiveRecord::Migration
     create_table :performances do |t|
       t.string :name
       t.string :location
-      t.string :date
+      t.integer :year
+      t.integer :month
+      t.integer :day
       t.string :time
       t.text :description
       t.string :scores, array: true

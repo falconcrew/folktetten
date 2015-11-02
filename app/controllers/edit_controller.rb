@@ -4,7 +4,8 @@ class EditController < ApplicationController
     @infos = Info.all
     @scores = Score.all
     @performances = Performance.all
-    @medias = Media.all
+    @videos = Video.all
+    @pictures = Picture.all
     @users = User.all
   end
   

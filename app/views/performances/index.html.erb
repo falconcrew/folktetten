@@ -4,7 +4,7 @@
 	<% @performances.each do |perf| %>
 		<hr class="perf"><br>
 		<h2><%= perf.name %></h2>
-		<h3><%= perf.location %>, <%= perf.date %>, <%= perf.time %></h3>
+		<h3><%= perf.location %>, <%= perf.day %> <%= @months[perf.month-1] %> <%= perf.year %>, kl. <%= perf.time %></h3>
 		<p><%= perf.description %></p><br>
 		<%= link_to "Test", performance_path(perf) %>
 	<% end %>

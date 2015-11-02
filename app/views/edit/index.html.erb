@@ -37,4 +37,34 @@
 		</table>
 	</div>
 	
+	<h1>Hantera Media</h1>
+	<h3>Videor</h3>
+	<div class="framed">
+		<table>
+			<tbody>
+				<% @videos.each do |video| %>
+					<tr>
+						<td><%= video.name %></td>
+						<td><%= button_to "Ta bort", video, method: :delete %></td>
+					</tr>
+				<% end %>
+				<tr><td><%= button_to "Lägg till video", new_video_path, method: :get %></td></tr>
+			</tbody>
+		</table>
+	</div>
+	<h3>Bilder</h3>
+	<div class="framed">
+		<table>
+			<tbody>
+				<% @pictures.each do |picture| %>
+					<tr>
+						<td><%= picture.name %></td>
+						<td><%= button_to "Ta bort", picture, method: :delete %></td>
+					</tr>
+				<% end %>
+				<tr><td><%= button_to "Lägg till bild", new_picture_path, method: :get %></td></tr>
+			</tbody>
+		</table>
+	</div>
+	
 </div>

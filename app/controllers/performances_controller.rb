@@ -2,6 +2,7 @@ class PerformancesController < ApplicationController
   
   def index
     @performances = Performance.all
+    @months = ["Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"]
   end
   
   def new
@@ -12,6 +13,11 @@ class PerformancesController < ApplicationController
   def create
     @performance = Performance.new(perf_params)
     @performance.scores = params[:scores]
+    @performance.year = params[:year]
+    @performance.month = params[:month]
+    @performance.day = params[:day]
+    #@performance.hour = params[:hour]
+    #@performance.minute = params[:minute]
     if @performance.save
       redirect_to "/edit"
     end
@@ -33,6 +39,11 @@ class PerformancesController < ApplicationController
   def update
     @performance = Performance.find(params[:id])
     @performance.scores = params[:scores]
+    @performance.year = params[:year]
+    @performance.month = params[:month]
+    @performance.day = params[:day]
+    #@performance.hour = params[:hour]
+    #@performance.minute = params[:minute]
     if @performance.update_attributes(perf_params)
       redirect_to '/edit'
     end
@@ -46,7 +57,7 @@ class PerformancesController < ApplicationController
   
   private
   def perf_params
-    params.require(:performance).permit(:name, :location, :date, :time, :description)
+    params.require(:performance).permit(:name, :location, :time, :description)
   end
   
 end

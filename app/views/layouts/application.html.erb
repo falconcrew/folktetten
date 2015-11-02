@@ -21,15 +21,30 @@
 </head>
 <body>
 	<body onLoad="hide()">
-		<li class='start_page'><%= link_to image_tag("logga2.png"), "/" %></li>
-
+		<div class="page-top">
+			<li class='logga'><%= link_to image_tag("logga2.png"), "/" %></li>
+			<li class="upcoming">
+				<div class="next-perf">
+					<% if get_next_performance %>
+						<h3>Nästa framträdande</h3>
+						<h4><%= get_next_performance.name %></h4>
+						<p><%= get_next_performance.location %>, <%= get_next_performance.day %> <%= get_month(get_next_performance.month-1) %> <%= get_next_performance.year %>, kl. <%= get_next_performance.time %></p><br>
+						<%= link_to "Läs mer", "/framtradanden" %>
+					<% end %>
+				</div>
+			</li>
+		</div>
+		<ul>
+			
+		</ul>
+		
 		<HR>			
 		<div class="nav">
 			<div class="container">
 				<ul class="pull-left">
 					<li class='info'><p id = "info", class = "tabs"><%= link_to "Info", "/info" %></p></li>
 					<li class='contact'><p id ="contact", class = "tabs"><%= link_to "Kontakt", "/kontakt" %></p></li>
-					<li class='media'><p id="media", class = "tabs">Media</p></li>
+					<li class='media'><p id="media", class = "tabs"><%= link_to "Media", "/media" %></p></li>
 					<li class='performances'><p id='performances', class="tabs"><%= link_to "Framträdanden", performances_path %></p></li>
 					<% if current_user %>
 						<li class='inhouse'><p id="inhouse", class = "tabs">Internt</p></li>

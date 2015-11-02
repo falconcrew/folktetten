@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :infos
   resources :edit
   resources :performances
+  resources :videos
+  resources :pictures
   
   root 'infos#index'
   
@@ -19,6 +21,10 @@ Rails.application.routes.draw do
   get '/kontakt' => 'infos#contact'
   
   get '/edit' => "edit#index"
+  
+  get '/media' => "pictures#index"
+  
+  get '/framtradanden' => "performances#index"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -22,7 +22,7 @@ body {
 }
 
 li {
-  list-style:none;
+  list-style: none;
   color: white;
   font-size: 14px;
   font-weight: bold;
@@ -35,6 +35,7 @@ div {
 
 a {
 	text-decoration: none;
+	text-transform: none;
 }
 
 .nav a {
@@ -77,11 +78,11 @@ p.tabs {
 }
 
 .pull-right {
-	float:right;
+	float: right;
 }
 
 .pull-left {
-	float:left;
+	float: left;
 }
 
 .logga {
@@ -130,6 +131,14 @@ textarea {
 	height: 200px;
 }
 
+input.textfield {
+	width: 500px;
+}
+
+input.time {
+	width: 212px;
+}
+
 hr.perf {
 	color: white;
 	width: 100%;
@@ -141,7 +150,43 @@ div.perf {
 }
 
 div.perf a {
-	text-decoration: none;
-	text-transform: none;
 	color: white;
+}
+
+h1 a {
+	color: white;
+	text-transform: none;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 500px;
+  height: auto;
+  margin-bottom: 12px;
+} 
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: relative;
+  top: 0; left: 0;
+  width: 500px;
+  height: 281.25px;
+}
+
+.page-top li {
+	display: inline;
+}
+
+.upcoming {
+	float: right;
+}
+
+.upcoming a {
+	color: white;
+	text-transform: none;
 }

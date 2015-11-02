@@ -7,7 +7,12 @@
 		<%= f.label "Plats" %><br>
 		<%= f.text_field :location %><br>
 		<%= f.label "Datum" %><br>
-		<%= f.text_field :date %><br>
+		<%= f.label "År:" %>
+		<%= select_tag :year, options_for_select(2015..2020, selected: @performance.year) %>
+		<%= f.label "Månad:" %>
+		<%= select_tag :month, options_for_select(1..12, selected: @performance.month) %>
+		<%= f.label "Dag:" %>
+		<%= select_tag :day, options_for_select(1..31, selected: @performance.day) %><br>
 		<%= f.label "Tid" %><br>
 		<%= f.text_field :time %><br>
 		<%= f.label "Beskriving" %><br>

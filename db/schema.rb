@@ -11,21 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930075615) do
-
-  create_table "contacts", force: true do |t|
-    t.string   "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "fils", force: true do |t|
-    t.string   "name"
-    t.string   "attachment"
-    t.string   "type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20151029140814) do
 
   create_table "infos", force: true do |t|
     t.text     "start"
@@ -35,20 +21,23 @@ ActiveRecord::Schema.define(version: 20150930075615) do
     t.datetime "updated_at"
   end
 
-  create_table "media", force: true do |t|
-    t.string   "media"
-    t.string   "description"
+  create_table "performances", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.integer  "year"
+    t.integer  "month"
+    t.integer  "day"
+    t.string   "time"
+    t.text     "description"
+    t.string   "scores"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "performances", force: true do |t|
+  create_table "pictures", force: true do |t|
     t.string   "name"
-    t.string   "location"
-    t.string   "date"
-    t.string   "time"
+    t.string   "attachment"
     t.text     "description"
-    t.string   "scores"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -70,6 +59,14 @@ ActiveRecord::Schema.define(version: 20150930075615) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "videos", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
