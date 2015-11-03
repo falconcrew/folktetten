@@ -1,5 +1,7 @@
 class EditController < ApplicationController
   
+  before_action :require_editor, only: [:index]
+  
   def index
     @infos = Info.all
     @scores = Score.all

@@ -56,7 +56,7 @@
 				</ul>
 				<ul class="pull-right">
 					<% if current_user %>
-					<li><p class="tabs"><%= current_user.username %></p></li>
+					<li><p class="tabs"><%= link_to current_user.username, edit_user_path(current_user) %></p></li>
 					<li class="logout"><p class="tabs"><%= link_to "Logga ut", logout_path, method: "delete" %></p></li>
 					<% else %>
 					<li class='login'><p id = "login", class = "tabs"><%= link_to "Logga in", login_path %></p></li>

@@ -1,0 +1,12 @@
+<div>
+	<br><br/><br>
+	<%= form_for @user do |f| %>
+		<%=f.label "Användarnamn:"%>
+		<%= f.text_field :username %>
+		<%= f.label "Lösenord:" %>
+		<%= f.text_field :password %>
+		<%= f.label "Roll:" %>
+		<%= f.text_field :role %>
+		<%= f.submit "Lägg till användare" %>
+	<% end %>
+</div>

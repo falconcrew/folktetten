@@ -1,5 +1,7 @@
 class InfosController < ApplicationController
   
+  before_action :require_editor, only: [:edit, :update]
+  
   def index
     @infos = Info.all
   end

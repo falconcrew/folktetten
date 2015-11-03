@@ -1,5 +1,8 @@
 class PerformancesController < ApplicationController
   
+  before_action :require_user, only: [:show, :new, :create, :update, :edit, :destroy]
+  before_action :require_editor, only: [:new, :edit, :create, :update, :destroy]
+  
   def index
     @performances = Performance.all
     @months = ["Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"]
@@ -16,8 +19,6 @@ class PerformancesController < ApplicationController
     @performance.year = params[:year]
     @performance.month = params[:month]
     @performance.day = params[:day]
-    #@performance.hour = params[:hour]
-    #@performance.minute = params[:minute]
     if @performance.save
       redirect_to "/edit"
     end
@@ -42,8 +43,6 @@ class PerformancesController < ApplicationController
     @performance.year = params[:year]
     @performance.month = params[:month]
     @performance.day = params[:day]
-    #@performance.hour = params[:hour]
-    #@performance.minute = params[:minute]
     if @performance.update_attributes(perf_params)
       redirect_to '/edit'
     end

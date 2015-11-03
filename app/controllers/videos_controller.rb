@@ -1,5 +1,7 @@
 class VideosController < ApplicationController
   
+  before_action :require_editor, only: [:new, :create, :destroy]
+  
   def index
     @videos = Video.all
   end

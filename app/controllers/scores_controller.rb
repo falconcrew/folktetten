@@ -1,5 +1,8 @@
 class ScoresController < ApplicationController
   
+  before_action :require_user, only: [:index, :new, :create, :destroy]
+  before_action :require_editor, only: [:new, :create, :destroy]
+  
   def index
     @scores = Score.all.order(:name)
   end

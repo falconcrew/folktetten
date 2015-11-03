@@ -1,5 +1,7 @@
 class PicturesController < ApplicationController
   
+  before_action :require_editor, only: [:new, :create, :destroy]
+  
   def index
     @pictures = Picture.all
     @videos = Video.all
