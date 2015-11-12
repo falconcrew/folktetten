@@ -1,8 +1,7 @@
-<br></br><br>
-			<div class="login-insert">
-				<%= form_for(:session, url: login_path) do |f| %>
-    			<%= f.text_field :username, :placeholder => "Användarnamn" %>
-    			<%= f.password_field :password, :placeholder => "Lösenord" %>
-    			<%= f.submit "Logga in", class: "btn-submit" %>
-    			<% end %>
-			</div>
+<div class="login-insert">
+	<%= form_for(:session, url: login_path) do |f| %>
+		<%= f.text_field :username, :placeholder => "Användarnamn" %>
+		<%= f.password_field :password, :placeholder => "Lösenord" %>
+		<%= f.submit "Logga in", class: "btn-submit" %>
+	<% end %>
+</div>

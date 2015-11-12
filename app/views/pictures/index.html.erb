@@ -1,5 +1,4 @@
 <div class="embed-container">
-	<!--<br><br/><br>-->
 	<% @videos.each do |video| %>
 		<h3><%= video.name %></h3>
 		<%= embed(video.url) %><br>

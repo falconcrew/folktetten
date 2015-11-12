@@ -1,7 +1,8 @@
-<br><br/><br>
-<% if current_user && current_user.editor? %>
-	<%= form_for @score, :html => { multipart: true } do |f| %>
-		<%= file_field_tag "uploads[]", multiple: true %>
-		<%= f.submit "Ladda upp", class: "btn btn-primary" %>
+<div>
+	<% if current_user && current_user.editor? %>
+		<%= form_for @score, :html => { multipart: true } do |f| %>
+			<%= file_field_tag "uploads[]", multiple: true %>
+			<%= f.submit "Ladda upp", class: "btn btn-primary" %>
+		<% end %>
 	<% end %>
-<% end %>
+</div>

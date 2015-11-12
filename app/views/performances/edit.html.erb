@@ -1,6 +1,5 @@
 <div>
-	<br><br/><br>
-	<h1>Uppdatera framträdnde</h1>
+	<h1>Uppdatera framträdande</h1>
 	<%= form_for @performance do |f| %>
 		<%= f.label "Namn" %><br>
 		<%= f.text_field :name %><br>
@@ -18,7 +17,7 @@
 		<%= f.label "Beskriving" %><br>
 		<%= f.text_area :description %><br>
 		<% @scores.each do |score| %>
-			<% if @performance.scores.include?(score.name) %>
+			<% if !@performance.scores == nil && @performance.scores.include?(score.name) %>
 				<%= check_box_tag "scores[]", score.name, true %>
 			<% else %>
 				<%= check_box_tag "scores[]", score.name %>

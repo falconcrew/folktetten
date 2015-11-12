@@ -27,8 +27,12 @@ class PerformancesController < ApplicationController
   def show
     @performance = Performance.find(params[:id])
     @scores = []
-    @performance.scores.each do |score|
-      @scores.push(Score.find_by_name(score))
+    if @performance.scores == nil
+      redirect_to '/performances'
+    else
+      @performance.scores.each do |score|
+        @scores.push(Score.find_by_name(score))
+      end
     end
   end
   

@@ -1,5 +1,5 @@
-<div>
-	<br><br/><br>
+<div class="perf">
+	<h3>Noter till <%= @performance.name %></h3>
 	<% @scores.each do |score| %>
 		<li><p class="scores"><%= link_to score.name, score.attachment_url %></p></li>
 	<% end %>
